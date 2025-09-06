@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="using:dicom_reader.ViewModels" mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" x:DataType="vm:TestWindowViewModel" x:Class="dicom_reader.Views.TestWindowView">
+  <Design.DataContext>
+    <vm:TestWindowViewModel/>
+  </Design.DataContext>
+  <Grid RowDefinitions="*" ColumnDefinitions="2*, 8*">
+    <StackPanel VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">
+      <Button Click="OpenFileButton_Clicked" Foreground="Black">Open Dicom File</Button>
+    </StackPanel>
+    <TabControl Grid.Row="0" Grid.Column="1">
+      <TabItem Header="Dicom Image" Foreground="Black">
+        <Image Name="DicomImg"/>
+      </TabItem>
+      <TabItem Header="Dicom Text Content" Foreground="Black">
+        <ScrollViewer>
+          <TextBlock Name="DicomTextContent" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </ScrollViewer>
+      </TabItem>
+    </TabControl>
+  </Grid>
+</UserControl>
